@@ -1,0 +1,7 @@
+pandas
+pyvis
+networkx
+sparqlwrapper
+pytorch
+pytorch_geometric
+

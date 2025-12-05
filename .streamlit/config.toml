@@ -1,0 +1,11 @@
+# File: .streamlit/config.toml
+
+[theme]
+
+secondaryBackgroundColor = "#8d8888ff" 
+
+
+
+
+font = "sans serif"
+gatherUsageStats = false
