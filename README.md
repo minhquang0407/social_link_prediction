@@ -1,12 +1,5 @@
 # Phân tích Mạng xã hội (Wikidata) & Dự đoán Mối liên kết AI
 
-**Dự án của Nhóm:**
-* **Quân:** Kỹ sư Wikidata (Extractor / SPARQL).
-* **Tân:** Kỹ sư Đồ thị & AI (Transformer / AI Lead).
-* **Quang:** Kỹ sư Module & Ứng dụng (Loader / App Lead).
-
-
-
 ---
 
 ## 1. 📜 Giới thiệu Dự án (Project Manifesto)
@@ -41,15 +34,16 @@ Dự án giải quyết hai mục tiêu chính:
 
 ## 3. 🏗️ Kiến trúc Dự án
 
-Dự án được xây dựng theo kiến trúc 3 tầng rõ rệt:
+Dự án được xây dựng theo kiến trúc 4 tầng rõ rệt:
 
 1.  **Tầng Dữ liệu (Data Layer):**
     * Một pipeline ETL (Extract-Transform-Load) được xây dựng để gọi API của Wikidata (dùng SPARQL), làm sạch và nạp vào một đối tượng đồ thị `NetworkX` (`G_full.gpickle`).
 2.  **Tầng Logic (Logic Layer):**
-    * **Module 1 (BFS):** `src/module_1_bfs.py` (Quang) chứa logic `nx.shortest_path` để tìm đường đi.
-    * **Module 2 (AI):** `src/ai_utils.py` và `train.py` (Tân) chứa toàn bộ logic AI, từ tạo mẫu đến dự đoán.
-3.  **Tầng Trình diễn (Presentation Layer):**
-    * `src/app.py` (Quang) là một ứng dụng Streamlit, đóng vai trò là giao diện người dùng (UI) để tương tác với 2 module logic.
+    * **Module 1 (BFS):** `core/algorithms/bfs.py` chứa logic `nx.shortest_path` để tìm đường đi.
+    * **Module 2 (AI):** `core/ai`  chứa toàn bộ logic AI, từ tạo mẫu đến dự đoán.
+3. **Tầng ứng dụng (Application Layer):**
+4.  **Tầng Trình diễn (Presentation Layer):**
+    * `src/app.py` là một ứng dụng Streamlit, đóng vai trò là giao diện người dùng (UI) để tương tác với 2 module logic.
 
 ## 4. 🔬 Phương pháp luận (Methodology)
 
