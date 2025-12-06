@@ -23,7 +23,7 @@ WHERE {
         bd:serviceParam wikibase:language "vi,en". 
     }
 }
-ORDER BY
+ORDER BY ?person
 """
 
 SPOUSE = """
