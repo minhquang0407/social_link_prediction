@@ -9,7 +9,7 @@ sys.path.append(str(PROJECT_DIR))
 from datetime import datetime
 from SPARQLWrapper import SPARQLWrapper, JSON
 from config.queries import ALL_QUERIES, BASE_QUERY
-
+from config.settings import RAW_DIR
 
 # hàm ghi log
 def log_query_info(file_name, total_count, log_file="query_log.txt"):
@@ -190,7 +190,6 @@ class WikidataExtractor:
 
 if __name__ == "__main__":
     YOUR_USER_AGENT = "SocialLinkPredictionBot/1.0 (naqaq2005@gmail.com)"
-    OUTPUT_DIR = os.path.join("..", "data_output")
 
     extractor = WikidataExtractor(user_agent=YOUR_USER_AGENT)
-    extractor.fetch_all_relationships(ALL_QUERIES, 1800, 2025, OUTPUT_DIR)
+    extractor.fetch_all_relationships(ALL_QUERIES, 1800, 2025, str(RAW_DIR))
